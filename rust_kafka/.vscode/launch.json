@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'rust_kafka'",
+            "program": "${workspaceFolder}/target/debug/rust_kafka.exe",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=rust_kafka",
+                    "--package=rust_kafka"
+                ],
+                "filter": {
+                    "name": "rust_kafka",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PATH": "${env:USERPROFILE}\\.cargo\\registry\\cache\\index.crates.io-6f17d22bba15001f;${env:PATH}"
+            }            
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'rust_kafka'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=rust_kafka",
+                    "--package=rust_kafka"
+                ],
+                "filter": {
+                    "name": "rust_kafka",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
